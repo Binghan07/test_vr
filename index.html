@@ -52,7 +52,7 @@
     });
     //POPUP 關閉
     $(function(){
-    $('[data-is-toggle-button-for]').click(function(){
+    $('[data-is-toggle-button-for]').mouseout(function(){
         var receiver = $('[data-is-toggle-receiver-for="'+$(this).attr('data-is-toggle-button-for')+'"]');
         if(receiver.attr('visible') == true) {
             //console.log("hide");
