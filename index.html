@@ -39,7 +39,7 @@
   <script>
     //POPUP
     $(function(){
-        $('[data-is-button-for]').click(function(){
+        $('[data-is-button-for]').hover(function(){
             var receiver = $('[data-is-receiver-for="'+$(this).attr('data-is-button-for')+'"]');
             if(receiver.attr('visible') == true) {
                 //console.log("hide");
@@ -52,7 +52,7 @@
     });
     //POPUP 關閉
     $(function(){
-    $('[data-is-toggle-button-for]').click(function(){
+    $('[data-is-toggle-button-for]').hover(function(){
         var receiver = $('[data-is-toggle-receiver-for="'+$(this).attr('data-is-toggle-button-for')+'"]');
         if(receiver.attr('visible') == true) {
             //console.log("hide");
