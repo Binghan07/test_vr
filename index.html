@@ -11,6 +11,10 @@
   </head>
   <body>
     <a-scene>
+      
+      <a-asstes>
+        <img id="bg" src="iStock-864710938.jpg" alt="">
+      </a-asstes>  
       <a-entity>
         <a-entity id="camera" camera="" look-controls="" mouse-cursor="">
           <a-cursor id="cursor" cursor="fuse: true" scale="1.3 1.3 1.3"
@@ -22,7 +26,7 @@
           </a-cursor>
         </a-entity>
 
-        <a-sky src="iStock-864710938.jpg" rotation="0 -80 0" width="1920" height="1920" theta-length="90"></a-sky>
+        <a-sky src="#bg" rotation="0 -80 0" width="1920" height="1920" theta-length="90"></a-sky>
 
         <a-image  data-is-button-for="pop1"  data-array="room" src="icon.png" scale="7 7 7" position="0 20 3" opacity="1" rotation="30.66 90 0"> </a-image>
 
