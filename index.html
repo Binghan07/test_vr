@@ -22,17 +22,21 @@
           </a-cursor>
         </a-entity>
 
-        <a-sky src="iStock-864710938.jpg" rotation="0 -100 0"></a-sky>
+        <a-sky src="iStock-864710938.jpg" rotation="0 -80 0"></a-sky>
 
-        <a-image  data-is-button-for="pop1"  data-array="room" src="icon.png" scale="7 7 7" position="0 -100 3" opacity="1" rotation="30.66 90 0"> </a-image>
+        <a-image  data-is-button-for="pop1"  data-array="room" src="icon.png" scale="7 7 7" position="0 20 3" opacity="1" rotation="30.66 90 0"> </a-image>
 
         <a-entity data-is-receiver-for="pop1" data-array-poi-link-id="panelhide" visible="false">
-          <a-image src="pop_bg.png" position="0 -120 3" width="10" height="5" scale="2.7 2.7 2.7" rotation="65 0 0"></a-image>
-          <a-image data-is-button-for="pop1" src="false.png"  position="0 -150 3" width="1.5" height="1.5" scale="1.5 1.5 1.5" rotation="65 0 0"></a-image>
+          <a-image src="pop_bg.png" position="5 20 3" width="10" height="5" scale="2.7 2.7 2.7" rotation="65 0 0"></a-image>
+          <a-image data-is-button-for="pop1" src="false.png"  position="8 24 3" width="1.5" height="1.5" scale="1.5 1.5 1.5" rotation="65 0 0"></a-image>
         </a-entity>
       </a-entity>
+      <!-- 地面製作... -->
+      <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
+      <!-- ... -->
     </a-scene>
   </body>
+
   <script>
     //POPUP
     $(function(){
