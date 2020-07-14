@@ -22,15 +22,15 @@
           </a-cursor>
         </a-entity>
 
-      <a-sky src="iStock-864710938.jpg" rotation="0 -130 0"></a-sky>
+      <a-sky src="https://binghan07.github.io/test_vr/iStock-864710938.jpg" rotation="0 -130 0" ></a-sky>
 
-      <a-image  data-is-button-for="pop1"  data-array="room" src="icon.png" scale="7 7 7" position="-32 20 3" opacity="1" rotation="30.66 90 0"> </a-image>
+      <a-image  data-is-button-for="pop1"  data-array="room" src="https://binghan07.github.io/test_vr/icon.png" scale="7 7 7" position="-32 20 3" opacity="1" rotation="30.66 90 0"> </a-image>
 
       
           
         <a-entity data-is-receiver-for="pop1" data-array-poi-link-id="panelhide" visible="false">
-        <a-image src="pop_bg.png" position="-61.70 40 -4" width="10" height="5" scale="2.7 2.7 2.7" rotation="65 0 0"></a-image>
-        <a-image data-is-button-for="pop1" src="false.png"  position="-49.06 53.56 -44.60" width="1.5" height="1.5" scale="1.5 1.5 1.5" rotation="65 0 0"></a-image>
+        <a-image src="https://binghan07.github.io/test_vr/pop_bg.png" position="-51.70 30 -4" width="28" height="14" scale="2 2 2" rotation="35 90 0"></a-image>
+        <a-image data-is-button-for="pop1" src="https://binghan07.github.io/test_vr/false.png"  position="-49.06 53.56 -44.60" width="3.5" height="3.5" scale="3 3 3" rotation="65 0 0"></a-image>
       </a-entity>
       </a-entity>
     </a-scene>
@@ -61,6 +61,22 @@
             receiver.attr('visible', true);
         }
     });
+      
+      
+      
+      $(function(){
+    $('[data-is-toggle-button-for]').click(function(){
+        var receiver = $('[data-is-toggle-receiver-for="'+$(this).attr('data-is-toggle-button-for')+'"]');
+        if(receiver.attr('visible') == true) {
+            console.log("hide");
+            receiver.attr('visible', false);
+        }else{
+            console.log("show");
+            receiver.attr('visible', true);
+        }
+    });
+});
+      
 });
   </script>
 </html>
