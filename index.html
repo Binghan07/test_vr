@@ -22,7 +22,7 @@
           </a-cursor>
         </a-entity>
 
-        <a-sky src="iStock-864710938.jpg" rotation="0 -80 0"></a-sky>
+        <a-sky src="iStock-864710938.jpg" rotation="0 -80 0" width="1920" height="1920" theta-length="90"></a-sky>
 
         <a-image  data-is-button-for="pop1"  data-array="room" src="icon.png" scale="7 7 7" position="0 20 3" opacity="1" rotation="30.66 90 0"> </a-image>
 
@@ -31,14 +31,11 @@
           <a-image data-is-button-for="pop1" src="false.png"  position="8 24 3" width="1.5" height="1.5" scale="1.5 1.5 1.5" rotation="65 0 0"></a-image>
         </a-entity>
       </a-entity>
-      <!-- 地面製作... -->
-      <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
-      <!-- ... -->
     </a-scene>
   </body>
 
   <script>
-    //POPUP
+    //VRPOPUP
     $(function(){
         $('[data-is-button-for]').click(function(){
             var receiver = $('[data-is-receiver-for="'+$(this).attr('data-is-button-for')+'"]');
@@ -51,7 +48,7 @@
             }
         });
     });
-    //POPUP 關閉
+    //VRPOPUP 關閉
     $(function(){
     $('[data-is-toggle-button-for]').click(function(){
         var receiver = $('[data-is-toggle-receiver-for="'+$(this).attr('data-is-toggle-button-for')+'"]');
