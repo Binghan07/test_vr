@@ -1,24 +1,10 @@
-<!DOCTYPE html>
 
-<html>
-  <head>
-    <meta charset="utf-8">
-
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="" content="">
-    <meta name="keywords" content="">
-    <meta name="" content="">
-    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
-
-    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
-    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
-  </head>
-  <body>
+<head>
+   <link rel="manifest" href="manifest.json">
+   <noscript>pwa</noscript>
+</head>
+<body>
+<body>
 
     <a-scene>
     <!--360img-->
@@ -135,24 +121,25 @@
           console.log('poi visiblity array');
       });
   });
+</script>  
+<!--js插件-->
+<script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+<script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+<!--以下是pwa-->
+<script>
+var serviceWorkerIsSupported = 'serviceWorker' in navigator ? true : false
+// service workers 是否已註冊
+if ( serviceWorkerIsSupported ) {
+        // 加載事件來保持頁面加載性能
+        window.addEventListener('load', function(){
+                // 註冊 ervice worker~
+                navigator.serviceWorker.register('sw.js');
+                // 使用預緩存版本 還沒想到能預先緩存什麼
+                // navigator.serviceWorker.register('sw-precaching.js');
+        });
+}
+</script>
 
-document.getElementById("request_permission").addEventListener("click", function(){
-  if (
-    DeviceMotionEvent &&
-      DeviceMotionEvent.requestPermission &&
-      typeof DeviceMotionEvent.requestPermission === 'function'
-        ) {
-        DeviceMotionEvent.requestPermission();
-        }
-      if (
-        DeviceOrientationEvent &&
-      DeviceOrientationEvent.requestPermission &&
-        typeof DeviceOrientationEvent.requestPermission === 'function'
-      ) {
-    DeviceOrientationEvent.requestPermission();
-  }
-})
-  </script>  
-  </body>
-</html>
+</body>
