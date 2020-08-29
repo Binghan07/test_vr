@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
 
-    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+    <script src="https://aframe.io/aframe/dist/aframe-master.min.js"></script>
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -27,7 +27,7 @@
 
     <!--中心點擊區-->
       <a-entity>
-        <a-entity id="camera" camera="" position="10 1 5" look-controls="" mouse-cursor="">
+        <a-entity id="camera" camera look-controls position="10 1 5" look-controls="" mouse-cursor="">
           <a-cursor id="cursor" cursor="fuse: true" scale="1.3 1.3 1.3"
           animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1.3 1.3 1.3; dur: 150"
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
@@ -39,7 +39,7 @@
 
 
   <!--pop_up_icon-->
-    <a-entity data-array-link-id="rot" data-is-toggle-receiver-for="rot1" visible="true">
+    <a-entity camera look-controls data-array-link-id="rot" data-is-toggle-receiver-for="rot1" visible="true">
       <a-image src="https://binghan07.github.io/test_vr/icon.png" data-is-button-for="rotpoi" data-array-link-id="rot" data-array="room" data-poi-array="rot" data-is-toggle-button-for="rot1" scale="7 7 7" position="-32 20 3" opacity="1" rotation="30.66 90 0"> </a-image>
 
         <a-image src="https://binghan07.github.io/test_vr/icon.png" data-is-button-for="rotpoi1" data-array-link-id="rot" data-array="room" data-poi-array="rot" data-is-toggle-button-for="rot1" scale="2.3 2.3 2.3" position="0 12 -1" opacity="1" rotation="90 90 0"> </a-image>
@@ -52,21 +52,21 @@
     
 
 <!--pop_up -->
-    <a-entity data-is-receiver-for="rotpoi" data-array-poi-link-id="panelhide" data-poi-array="poiarray" visible="false">
+    <a-entity camera look-controls data-is-receiver-for="rotpoi" data-array-poi-link-id="panelhide" data-poi-array="poiarray" visible="false">
       <a-image src="https://binghan07.github.io/test_vr/pop_bg.png" position="-61.70 40 -4" width="48" height="24" scale="2 2 2" rotation="35 90 0"></a-image>
         <a-image data-is-button-for="rotpoi" data-is-toggle-button-for="rot1" src="https://binghan07.github.io/test_vr/false.png"  position="-49.06 53.56 -44.60" width=".4" height=".4" scale="16 16 16" rotation="35 90 0"></a-image>
     </a-entity>
 
-    <a-entity data-is-receiver-for="rotpoi1" data-array-poi-link-id="panelhide" data-poi-array="poiarray" visible="false">
+    <a-entity camera look-controls data-is-receiver-for="rotpoi1" data-array-poi-link-id="panelhide" data-poi-array="poiarray" visible="false">
       <a-image src="https://binghan07.github.io/test_vr/pop_bg.png" position="0 19 -10" width="10" height="5" scale="2.7 2.7 2.7" rotation="65 0 0"></a-image>
         <a-image data-is-button-for="rotpoi1" data-is-toggle-button-for="rot1" src="https://binghan07.github.io/test_vr/false.png"  position="10.54 19 -5" width="1.5" height="1.5" scale="1.5 1.5 1.5" rotation="65 0 0"></a-image>
     </a-entity>
-     <a-entity data-is-receiver-for="rotpoi2" data-array-poi-link-id="panelhide" data-poi-array="poiarray" visible="false">
+    <a-entity camera look-controls data-is-receiver-for="rotpoi2" data-array-poi-link-id="panelhide" data-poi-array="poiarray" visible="false">
       <a-image src="https://binghan07.github.io/test_vr/pop_bg.png" position="14 9 14" width="10" height="5" scale="2.7 2.7 2.7" rotation="11.68 -135 0"></a-image>
         <a-image data-is-button-for="rotpoi2" data-is-toggle-button-for="rot1" src="https://binghan07.github.io/test_vr/false.png"  position="5.08 13.60 21.03" width="4" height="4" scale=".8 .8 .8" rotation="-7.92 45.48 0"></a-image>
     </a-entity>
 
-      <a-entity data-is-receiver-for="rotpoi3" data-array-poi-link-id="panelhide" data-poi-array="poiarray" visible="false">
+      <a-entity camera look-controls data-is-receiver-for="rotpoi3" data-array-poi-link-id="panelhide" data-poi-array="poiarray" visible="false">
       <a-image src="https://binghan07.github.io/test_vr/pop_bg.png" position="-43.88 62.05 -25.42" width="10" height="5" scale="7.5 7.5 7.5" rotation="35.04 66.20 0"></a-image>
         <a-image data-is-button-for="rotpoi3" data-is-toggle-button-for="rot1" src="https://binghan07.github.io/test_vr/false.png"  position="-24.06 72.36 -50.97" width="4" height="4" scale="2 2 1" rotation="35.96 66.54 0"></a-image>
     </a-entity>
@@ -135,15 +135,6 @@
           console.log('poi visiblity array');
       });
   });
-  DeviceMotionEvent.requestPermission()
-.then(response => {
-  if (response == 'granted') {
-    window.addEventListener('devicemotion', (e) => {
-      // do something with e
-    })
-  }
-}).catch(console.error)
-
 
 
 document.getElementById("request_permission").addEventListener("click", function(){
